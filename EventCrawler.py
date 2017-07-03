@@ -7,6 +7,7 @@ import facebook
 
 # 用 https://findmyfbid.com 找出Event列表的id
 ID = '349696661821984'
+filename = '紐約哲五.txt'
 
 # 爬出這個ID的網頁的資料
 graph = facebook.GraphAPI(access_token='EAACEdEose0cBAOu3jeqZC59SNSNINpOnhs4b9UZCrYuvygnYgvyaAsTsUPsqkM7qASkZBoHZBD2DxmXpoHXta8k3Xz1HiKmG6AlvBkQowAvMELGWaGqD9dluNWXMQUSZBVaraOhvrOUdamuaht8RBWrSTvs2cpevTujqiFoxyZC2jQY2gCZAbZAJ8L6xwX2b6zEZD', version='2.7')
@@ -14,7 +15,7 @@ a = graph.get_object( ID + '/events?limit=50')
 
 
 # 開一個文字檔
-with open('紐約哲五.txt', 'w') as f:
+with open(filename, 'w') as f:
 
     # 在剛剛那個網頁的資料裡面每一個Event
     for event in a['data']:
